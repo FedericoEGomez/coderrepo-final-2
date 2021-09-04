@@ -1,0 +1,42 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Photo</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+            <h1>Product <%= dataUnit.product.name %></h1>
+            <tr>
+              <td><%= dataUnit.product.name %></td>
+              <td>$<%= dataUnit.product.price %></td>
+              <td><img class="modal-content container-sm p-3" src=<%= dataUnit.product.url %>  ></td>
+              <td><%= dataUnit.product.description %></td>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <form action="/addcart" method="POST">
+    <div class="form-group" hidden >
+      <input type="number" name="id" placeholder="Number Cart" class="form-control w-25" value="<%= dataUnit.product.id %>" >
+    </div>
+    <div class="form-group">
+      <input type="number" name="number" placeholder="Number Cart" class="form-control w-25" >
+    </div>
+    <button type="submit" class="btn btn-primary">
+      Add cart
+    </button>
+  </form>
+  
+</div>
+
+<% include partials/_footer %>

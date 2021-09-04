@@ -1,0 +1,25 @@
+[
+  {
+    "id": "1",
+    "cart": [
+      {
+        "product": {
+          "id": "1",
+          "name": "un perrito bonito",
+          "price": "5000",
+          "url": "https://www.ecestaticos.com/image/clipping/4eb2fe1b771826cf037b432e11352dea/la-curiosa-historia-del-perro-que-ayudo-a-una-mujer-enferma-a-volver-a-mover-el-brazo.jpg",
+          "description": "facha el perro solo le faltan lentes"
+        }
+      },
+      {
+        "product": {
+          "id": 2,
+          "name": "placa de video buenarda",
+          "price": "5000",
+          "url": "https://http2.mlstatic.com/D_NQ_NP_775503-MLA45043082424_032021-W.jpg",
+          "description": "Una placa de video facha"
+        }
+      }
+    ]
+  }
+]

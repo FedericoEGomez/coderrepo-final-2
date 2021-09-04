@@ -1,0 +1,37 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <td>n°</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Photo</td>
+            <td class="w-25">Actions</td>
+          </tr>
+        </thead>
+        <tbody>
+            <h1>Cart List</h1>
+            <% for(var i = 0; i < dataUnit.cart.length; i++) { %>
+                <tr>
+                  <td><%= dataUnit.cart[i].product.id %></td>
+                  <td><%= dataUnit.cart[i].product.name %></td>
+                  <td>$<%= dataUnit.cart[i].product.price %></td>
+                  <td><img class="modal-content container-sm p-3" src=<%= dataUnit.cart[i].product.url %>  ></td>
+                  <td>
+                    <form action="/delprodcart/<%= dataUnit.cart[i].product.id %>?_method=DELETE" method="POST">
+                      <button type="submit" class="btn btn-danger border rounded">Delete</button>
+                    </form>
+                  </td>
+                </tr>
+              <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<% include partials/_footer %>

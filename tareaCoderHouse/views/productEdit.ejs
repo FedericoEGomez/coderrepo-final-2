@@ -1,0 +1,29 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card-body">
+        <form action="/edit/<%= dataToEdit.product.id %>?_method=PUT" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Name" class="form-control" value='<%= dataToEdit.product.name %>' autofocus>
+          </div>
+          <div class="form-group">
+            <input type="number" name="price" placeholder="Price" class="form-control"  value='<%= dataToEdit.product.price %>'>
+          </div>
+          <div class="form-group">
+            <input type="text" name="url" placeholder="URL photo" class="form-control" value='<%= dataToEdit.product.url %>' >
+          </div>
+          <div class="form-group">
+            <input type="text" name="description" placeholder="Description" class="form-control" value='<%= dataToEdit.product.description %>'>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Edit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include partials/_footer %>
