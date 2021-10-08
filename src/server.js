@@ -4,9 +4,12 @@ import { carritosRouter, productosRouter, testRouter , login} from './routes/ind
 import session from 'express-session';
 import MongoStore from 'connect-mongo'
 
+import dotenv from 'dotenv'
+
+
 
 const app = express()
-
+dotenv.config()
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
@@ -15,6 +18,8 @@ const options = {
     userNewUrlPaser: true,
     useUnifiedTopology: true
 }
+
+
 app.use(session({
     store: MongoStore.create({
         mongoUrl: process.env.MONGODBURI,
@@ -24,8 +29,7 @@ app.use(session({
     seveUninitialized: false,
     secret: process.env.SECRET_SESSION,
     cookie:{
-        maxAge:30000*10,
-        expires: true
+        maxAge:30000
     },
     rolling: true
 }))
