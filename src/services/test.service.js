@@ -1,5 +1,9 @@
 import generateProduct from "../utils/productos.utils.js"
+
+
 const products = []
+
+
 
 export async function postProduct(cant=5) {
     let cantidad = cant
@@ -11,15 +15,19 @@ export async function postProduct(cant=5) {
             ...generateProduct()
         }
         products.push(product)
+
     }
     return products
 }
 
+
+
+
 export async function getProductos() {
     try {
         return products
-    } catch (e) {
-        throw new Error(e)        
+    } catch (error) {
+        throw new Error(error)        
         
     }
     

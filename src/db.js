@@ -14,7 +14,7 @@ mongoose.connect(
 		} else {
 			console.log(err)
 		}
-	},
+	}
 )
 
 export default mongoose
